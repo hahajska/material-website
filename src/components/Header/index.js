@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
+import transitions from "@material-ui/core/styles/transitions";
 
-export default function Header() {
+export default function Header(props) {
+  const [isToggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!isToggle);
+  };
+
   const useStyles = makeStyles((theme) => ({
     Header: {
       backgroundColor: "red",
@@ -24,8 +31,6 @@ export default function Header() {
     { id: 3, item: "Contacts" },
   ];
 
-  const value = "-100%";
-
   return (
     <>
       <Grid
@@ -41,10 +46,10 @@ export default function Header() {
               <Links>{item.item}</Links>
             ))}
           </ul>
-          <Icona>Click on Me!</Icona>
+          <Icona onClick={handleToggle}>Click on Me!</Icona>
         </Grid>
       </Grid>
-      <MenuWrappers>hello world</MenuWrappers>
+      <MenuWrappers visibility={isToggle}>hello world</MenuWrappers>
     </>
   );
 }
@@ -70,11 +75,14 @@ const Icona = styled.p`
 `;
 const MenuWrappers = styled.div`
   height: 10vh;
+  z-index: 1;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   background: green;
-  transform: translateY(50%);
   animation: 0.5s all ease-in-out;
+  display: ${(props) => (props.visibility ? "block" : "none")};
+
+  /*   display: ${(props) => (props.isToggle ? `block` : "none")};
+   color: ${(props) => (props.active ? "white" : "palevioletred")};
+
+ */
 `;
