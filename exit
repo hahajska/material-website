@@ -1,0 +1,29 @@
+[33mcommit 57b7f2f45dadbb07699cae526e476ef42bd786b2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: TomasSchlogl <thomas537@seznam.cz>
+Date:   Tue Apr 6 14:05:51 2021 +0200
+
+    mainpage done
+
+[33mcommit c6e82a6c2e4125f76c9da68cc2fd4137baa892d2[m
+Author: TomasSchlogl <thomas537@seznam.cz>
+Date:   Mon Apr 5 23:43:32 2021 +0200
+
+    menu díky styled compoenents done
+
+[33mcommit f206d5898a49c3b9396291707873ab470558f751[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: TomasSchlogl <thomas537@seznam.cz>
+Date:   Mon Apr 5 22:41:19 2021 +0200
+
+    pred problemem
+
+[33mcommit 8c1cee9911e742282790935f812447276964bdc3[m
+Author: TomasSchlogl <thomas537@seznam.cz>
+Date:   Mon Apr 5 12:56:36 2021 +0200
+
+    ucko
+
+[33mcommit 35fdfc11b58392cc04855ab75bce236f65cd5d5c[m
+Author: TomasSchlogl <thomas537@seznam.cz>
+Date:   Mon Apr 5 11:26:00 2021 +0200
+
+    Initialize project using Create React App

@@ -15,16 +15,16 @@ export default function MainPage() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      height: "80vh",
+      height: "85vh",
     },
     textItem: {
       height: "max-content",
-      padding: "2rem",
+      padding: "2rem 1rem 5rem 1rem",
       justifyContent: "center",
       flexDirection: "center",
       alignItems: "center",
       display: "flex",
-      height: "80vh",
+      height: "95vh",
     },
   }));
 
@@ -57,6 +57,9 @@ const Obrazek = styled.img`
   -webkit-box-shadow: 2px 15px 46px 1px rgba(255, 255, 255, 0.51);
   -moz-box-shadow: 2px 15px 46px 1px rgba(255, 255, 255, 0.51);
   object-fit: contain;
+  @media (max-width: 700px) {
+    width: 20rem;
+  }
 `;
 
 const Container = styled.div``;
