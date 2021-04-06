@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
-import transitions from "@material-ui/core/styles/transitions";
 
 export default function Header(props) {
   const [isToggle, setToggle] = useState(false);
@@ -49,7 +48,13 @@ export default function Header(props) {
           <Icona onClick={handleToggle}>Click on Me!</Icona>
         </Grid>
       </Grid>
-      <MenuWrappers visibility={isToggle}>hello world</MenuWrappers>
+      <MenuWrappers visibility={isToggle}>
+        <ul>
+          {navbarLinks.map((item) => (
+            <LinksDropdown>{item.item}</LinksDropdown>
+          ))}
+        </ul>
+      </MenuWrappers>
     </>
   );
 }
@@ -63,6 +68,11 @@ const Links = styled.li`
   }
 `;
 
+const LinksDropdown = styled.li`
+  padding: 1rem;
+  cursor: pointer;
+`;
+
 const Icona = styled.p`
   cursor: pointer;
   display: none;
@@ -74,11 +84,13 @@ const Icona = styled.p`
   }
 `;
 const MenuWrappers = styled.div`
-  height: 10vh;
+  height: max-content;
+  padding: 2rem;
   z-index: 1;
   width: 100%;
   background: green;
   animation: 0.5s all ease-in-out;
+
   display: ${(props) => (props.visibility ? "block" : "none")};
 
   /*   display: ${(props) => (props.isToggle ? `block` : "none")};
