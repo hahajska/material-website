@@ -37,15 +37,18 @@ const Text = styled.p`
 `;
 
 const Container = styled.div`
-background: linear-gradient(to bottom right, #532ada,#5f38e0 );
-  box-shadow: 3px 25px 100px #532ada; 
-   display: flex;
+  background: linear-gradient(to bottom right, #532ada, #5f38e0);
+  box-shadow: 3px 15px 75px #532ada;
+  display: flex;
   border-radius: 25px;
   justify-content: center;
   flex-direction: column;
   padding: 2rem 1.25rem 2rem 1.25rem;
-  width: 400px;´
+  width: 400px;
   position: relative;
+  @media (max-width: 700px) {
+    width: 300px;
+  }
 `;
 
 const Button = styled.button`
