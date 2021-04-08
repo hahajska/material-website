@@ -12,6 +12,12 @@ export default function MainPage() {
     },
 
     imgItem: {
+      [theme.breakpoints.down("md")]: {
+        order: 2,
+        height: "max-content",
+        padding: "5rem 2rem",
+      },
+
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -25,6 +31,10 @@ export default function MainPage() {
       alignItems: "center",
       display: "flex",
       height: "95vh",
+      [theme.breakpoints.down("md")]: {
+        height: "max-content",
+        padding: "5rem 2rem",
+      },
     },
   }));
 
@@ -62,13 +72,20 @@ const Obrazek = styled.img`
   }
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  @media (max-width: 960px) {
+    text-align: center;
+  }
+`;
 
 export const Nadpis = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   letter-spacing: -3px;
   word-spacing: -2px;
   color: #f1eeff;
+  @media (max-width: 960px) {
+    font-size: 2rem;
+  }
 `;
 const Podnadpis = styled.h6`
   font-size: 1.5rem;
@@ -81,10 +98,12 @@ const Text = styled.p`
   font-size: 1.25rem;
   letter-spacing: -1px;
   padding-top: 1rem;
-  text-align-last: left;
-  text-align: left;
   width: 75%;
   color: #c0b5e4;
+  @media (max-width: 960px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 const Button = styled.button`
   padding: 0.5rem 2rem;

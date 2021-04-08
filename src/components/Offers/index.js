@@ -99,6 +99,6 @@ export const Nadpis = styled.h1`
   word-spacing: 2px;
   color: #532ada;
   @media (max-width: 1000px) {
-    font-size: 2.5rem;
+    font-size: 9vw;
   }
 `;

@@ -14,7 +14,8 @@ const showCase = [
     text:
       "It is a long established fact that a reader will be distracted by the readable content",
     src: Obrazek1,
-    gridImage: "gridImage",
+    gridImageNormal: "gridImage",
+    gridTextNormal: "gridTextNormal",
   },
 
   {
@@ -24,8 +25,8 @@ const showCase = [
     text:
       "It is a long established fact that a reader will be distracted by the readable content",
     src: Obrazek2,
-    direction: "orderys",
-    directionMD: "orderysMD",
+    directionText: "orderys",
+    directionImage: "orderysMD",
   },
 
   {
@@ -35,7 +36,8 @@ const showCase = [
     text:
       "It is a long established fact that a reader will be distracted by the readable content",
     src: Obrazek3,
-    gridImage: "gridImage",
+    gridImageNormal: "gridImage",
+    gridTextNormal: "gridTextNormal",
   },
 ];
 
@@ -50,12 +52,30 @@ const useStyles = makeStyles((theme) => ({
     padding: "2rem 0rem 10rem 0rem",
   },
   orderys: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
     [theme.breakpoints.up("md")]: {
       order: 1,
       display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      background: "lightblue",
+      justifyContent: "center",
+      alignItems: "flex-start",
+      flexDirection: "column",
+      textAlign: "left",
+    },
+  },
+  gridTextNormal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "flex-end",
+      flexDirection: "column",
+      textAlign: "right",
     },
   },
   orderysMD: {
@@ -63,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       justifyContent: "flex-end",
       alignItems: "center",
-      background: "red",
     },
     display: "flex",
     justifyContent: "center",
@@ -86,13 +105,17 @@ export default function Obrazy() {
     <Grid container>
       {showCase.map((item) => (
         <Grid item md={12} className={classes.GridContainer}>
-          <Leva className={`${classes[item.direction]} `}>
+          <Leva
+            className={`${classes[item.gridTextNormal]} ${
+              classes[item.directionText]
+            }  `}
+          >
             <Nadpis>{item.title}</Nadpis>
             <Text>{item.text}</Text>
           </Leva>
           <Prava
-            className={`${classes[item.gridImage]} ${
-              classes[item.directionMD]
+            className={`${classes[item.gridImageNormal]} ${
+              classes[item.directionImage]
             }`}
           >
             <Portret src={item.src}></Portret>
@@ -105,11 +128,7 @@ export default function Obrazy() {
 
 const Leva = styled.div`
   width: 700px;
-  text-align: justify;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-direction: column;
+
   padding: 1rem;
   @media (max-width: 1557px) {
     align-items: center;
@@ -141,7 +160,6 @@ const Nadpis = styled.h1`
 
 const Text = styled.p`
   font-size: 2rem;
-  text-align: right;
   width: 20vw;
   padding-top: 1rem;
   word-spacing: -2px;

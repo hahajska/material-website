@@ -18,6 +18,11 @@ export default function Header(props) {
       zIndex: 100,
       position: "relative",
     },
+    NavbarList: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
     Icona: {
       display: "block",
       position: "absolute",
@@ -41,14 +46,8 @@ export default function Header(props) {
 
   return (
     <>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        justify="center"
-        className={classes.Header}
-      >
-        <Grid item xl={12}>
+      <Grid container className={classes.Header}>
+        <Grid item xl={12} className={classes.NavbarList}>
           <ul>
             {navbarLinks.map((item) => (
               <Links>{item.item}</Links>
@@ -104,7 +103,6 @@ const MenuWrappers = styled.div`
   z-index: 1;
   width: 100%;
   background: #fff;
-  border-top: 0.5px solid #7a7a7a;
   animation: 0.5s all ease-in-out;
 
   display: ${(props) => (props.visibility ? "block" : "none")};
