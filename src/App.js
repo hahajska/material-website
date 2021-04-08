@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Offers from "./components/Offers";
 import MainPage from "./components/MainPage";
+import Obrazy from "./components/Obrazy";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <MainPage />
       <Offers />
+      <Obrazy />
       <Footer />
     </div>
   );

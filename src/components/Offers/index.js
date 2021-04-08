@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Offer from "./Offer";
-import ShowCase from "./ShowCase";
 import Obrazek1 from "../../images/img.jpg";
 import Obrazek2 from "../../images/img2.jpg";
 import Obrazek3 from "../../images/img3.jpg";
@@ -35,41 +34,6 @@ const offers = [
   },
 ];
 
-const showCase = [
-  {
-    id: 4,
-    title: "ART",
-    subtitle: "Free For All",
-    text:
-      "It is a long established fact that a reader will be distracted by the readable content",
-    zarovnani: "gridTextShowCase",
-  },
-
-  { id: 5, src: Obrazek1, zarovnani: "gridImage" },
-  {
-    id: 6,
-    title: "NFT",
-    subtitle: "Crypto Users",
-    text:
-      "It is a long established fact that a reader will be distracted by the readable content",
-    zarovnani: "gridTextShowCase",
-    reverseRow: "gridReverse",
-  },
-
-  { id: 7, src: Obrazek2, zarovnani: "gridImage" },
-
-  {
-    id: 8,
-    title: "QAA",
-    subtitle: "Supporters",
-    text:
-      "It is a long established fact that a reader will be distracted by the readable content",
-    zarovnani: "gridTextShowCase",
-  },
-
-  { id: 9, src: Obrazek3, zarovnani: "gridImage" },
-];
-
 const useStyles = makeStyles((theme) => ({
   gridItem: {
     display: "flex",
@@ -91,12 +55,12 @@ const useStyles = makeStyles((theme) => ({
   },
   gridShowCase: {
     height: "max-content",
-    padding: "5rem ",
+    padding: "5rem 1rem ",
   },
   gridImage: {
     justifyContent: "center",
     height: "max-content",
-    padding: "2.5rem",
+    padding: "5rem 1rem",
     display: "flex",
     alignItems: "center",
   },
@@ -123,18 +87,6 @@ export default function Offers() {
       {offers.map((item) => (
         <Grid item xs={12} md={12} lg={4} xl={4} className={classes.gridItem}>
           <Offer title={item.title} text={item.text} cena={item.cena} />
-        </Grid>
-      ))}
-      {showCase.map((item) => (
-        <Grid
-          item
-          xs={12}
-          md={6}
-          lg={6}
-          xl={6}
-          className={`${classes[item.zarovnani]}  ${classes.gridShowCase}`}
-        >
-          <ShowCase title={item.title} imageURL={item.src} />
         </Grid>
       ))}
     </Grid>
